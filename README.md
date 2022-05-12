@@ -55,3 +55,8 @@ Create the Restricted Policy:
 ```
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.restricted
 ```
+
+### Confirm all policies are running:
+```
+kubectl get networkpolicies.p -n storefront -l projectcalico.org/tier=product
+```
