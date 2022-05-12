@@ -53,5 +53,5 @@ kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop
 ``` 
 Create the Restricted Policy:
 ```
-kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/restricted.yaml
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.restricted
 ```
