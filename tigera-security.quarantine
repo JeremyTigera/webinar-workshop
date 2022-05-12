@@ -1,0 +1,30 @@
+apiVersion: projectcalico.org/v3
+kind: GlobalNetworkPolicy
+metadata:
+  name: tigera-security.quarantine
+spec:
+  tier: tigera-security
+  order: 100
+  selector: quarantine == "true"
+  namespaceSelector: ''
+  serviceAccountSelector: ''
+  ingress:
+    - action: Log
+      source: {}
+      destination: {}
+    - action: Deny
+      source: {}
+      destination: {}
+  egress:
+    - action: Log
+      source: {}
+      destination: {}
+    - action: Deny
+      source: {}
+      destination: {}
+  doNotTrack: false
+  applyOnForward: false
+  preDNAT: false
+  types:
+    - Ingress
+    - Egress
