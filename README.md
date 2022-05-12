@@ -80,6 +80,15 @@ Kubernetes best practise: Default Deny
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.default-deny-storefront
 ```
 
+### Security Tier
+
+We will create a quarantine policy in the security tier, which is higher than the product and platform.
+Meaning it has a higher priority.
+
+```
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/tigera-security.quarantine
+```
+
 ## Simulating an intruder
 
 We will simulate an intruder was able to create a rogue pod within the Storefront namespace.
@@ -103,6 +112,6 @@ kubectl apply -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
 ### Quarantine the Rogue Application: 
 
 Instead of deleting the intruder, we will put it in quarantine for further investigation by the security team.
-```
-kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/tigera-security.quarantine
-```
+We already have a quarantine policy that is based on the quarantine label.
+
+
