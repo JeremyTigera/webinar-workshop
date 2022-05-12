@@ -1,0 +1,30 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: product.dmz
+  namespace: storefront
+spec:
+  tier: product
+  order: 0
+  selector: fw-zone == "dmz"
+  serviceAccountSelector: ''
+  ingress:
+    - action: Allow
+      source:
+        nets:
+          - 18.0.0.0/16
+      destination: {}
+    - action: Deny
+      source: {}
+      destination: {}
+  egress:
+    - action: Allow
+      source: {}
+      destination:
+        selector: fw-zone == "trusted"||app == "logging"
+    - action: Deny
+      source: {}
+      destination: {}
+  types:
+    - Ingress
+    - Egress
