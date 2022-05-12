@@ -113,5 +113,9 @@ kubectl apply -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
 
 Instead of deleting the intruder, we will put it in quarantine for further investigation by the security team.
 We already have a quarantine policy that is based on the quarantine label.
+```
+kubectl label pods attacker-pod quarantine=true
+```
+
 
 
