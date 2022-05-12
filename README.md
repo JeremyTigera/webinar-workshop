@@ -75,6 +75,9 @@ Allow traffic for Kube-DNS / CoreDNS:
 ```
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/platform.allowkubedns
 ```
+Kubernetes best practise: Default Deny
+```
+kubectl apply -f 
 
 ## Simulating an intruder
 
