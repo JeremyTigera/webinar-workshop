@@ -1,0 +1,29 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: product.restricted
+  namespace: storefront
+spec:
+  tier: product
+  order: 20
+  selector: fw-zone == "restricted"
+  serviceAccountSelector: ''
+  ingress:
+    - action: Allow
+      source:
+        selector: fw-zone == "trusted"
+      destination: {}
+    - action: Allow
+      source:
+        selector: fw-zone == "restricted"
+      destination: {}
+    - action: Deny
+      source: {}
+      destination: {}
+  egress:
+    - action: Allow
+      source: {}
+      destination: {}
+  types:
+    - Ingress
+    - Egress
