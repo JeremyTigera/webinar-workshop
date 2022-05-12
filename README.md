@@ -86,7 +86,7 @@ We will create a quarantine policy in the security tier, which is higher than th
 Meaning it has a higher priority.
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/tigera-security.quarantine
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/security.quarantine
 ```
 
 ## Simulating an intruder
