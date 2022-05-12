@@ -63,7 +63,7 @@ Confirm all policies are running:
 kubectl get networkpolicies.p -n storefront -l projectcalico.org/tier=product
 ```
 
-#### Platform Tier
+### Platform Tier
 
 Allow Kube-DNS Traffic: 
 We need to create the following policy within the ```tigera-security``` tier <br/>
@@ -74,4 +74,31 @@ kubectl get deployments -l k8s-app=kube-dns -n kube-system
 Allow traffic for Kube-DNS / CoreDNS:
 ```
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/platform.allowkubedns
+```
+
+## Simulating an intruder
+
+We will simulate an intruder was able to create a rogue pod within the Storefront namespace.
+
+### Increase the Sync Rate
+
+To get faster data;
+``` 
+kubectl patch felixconfiguration.p default -p '{"spec":{"flowLogsFlushInterval":"10s"}}'
+kubectl patch felixconfiguration.p default -p '{"spec":{"dnsLogsFlushInterval":"10s"}}'
+kubectl patch felixconfiguration.p default -p '{"spec":{"flowLogsFileAggregationKindForAllowed":1}}'
+```
+
+### Introduce the rogue pod
+
+Introduce the Rogue Application:
+```
+kubectl apply -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
+```
+
+### Quarantine the Rogue Application: 
+
+Instead of deleting the intruder, we will put it in quarantine for further investigation by the security team.
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/quarantine.yaml
 ```
