@@ -49,7 +49,7 @@ kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop
 ```
 Create the Trusted Policy:
 ```
-kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/trusted.yaml
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.trusted
 ``` 
 Create the Restricted Policy:
 ```
