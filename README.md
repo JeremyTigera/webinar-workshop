@@ -77,7 +77,8 @@ kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop
 ```
 Kubernetes best practise: Default Deny
 ```
-kubectl apply -f 
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.default-deny-storefront
+```
 
 ## Simulating an intruder
 
