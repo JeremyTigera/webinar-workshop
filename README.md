@@ -100,5 +100,5 @@ kubectl apply -f https://installer.calicocloud.io/rogue-demo.yaml -n storefront
 
 Instead of deleting the intruder, we will put it in quarantine for further investigation by the security team.
 ```
-kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/quarantine.yaml
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/tigera-security.quarantine
 ```
