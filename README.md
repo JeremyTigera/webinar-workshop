@@ -41,6 +41,8 @@ We will create 3 tiers: Security, Platform and Product.
 
 ### Zone-Based Architecture
 
+#### Product Tier
+
 Using the label schema in the application Storefront we will be able to create policies for our microsegmentation project:
 
 Create the DMZ Policy:
@@ -56,7 +58,20 @@ Create the Restricted Policy:
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.restricted
 ```
 
-### Confirm all policies are running:
+Confirm all policies are running:
 ```
 kubectl get networkpolicies.p -n storefront -l projectcalico.org/tier=product
+```
+
+#### Platform Tier
+
+Allow Kube-DNS Traffic: 
+We need to create the following policy within the ```tigera-security``` tier <br/>
+Determine a DNS provider of your cluster (mine is 'coredns' by default)
+```
+kubectl get deployments -l k8s-app=kube-dns -n kube-system
+```    
+Allow traffic for Kube-DNS / CoreDNS:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/allow-kubedns.yaml
 ```
