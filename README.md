@@ -16,3 +16,7 @@ Now the cluster is installed with Calico Enterprise, we will need to deploy an a
 ```
 kubectl apply -f https://installer.calicocloud.io/storefront-demo.yaml
 ```
+![image](https://user-images.githubusercontent.com/101111449/168093686-bf8634b2-3b3d-41dd-bec2-fc0ae8bdf196.png)
+
+You will notice that this application has been developped to use a Frontend, Backend, Logging and 2 Microservices and they have been designed to use the full potential of Calico Entreprise's Network Policies. With that label schema, we can deploy Storefront application in a zone based architecture to enforce Microsegmentation and Zero-Trust.
+
