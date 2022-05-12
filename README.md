@@ -39,6 +39,19 @@ You can create a tier via yaml manifest or simply via the WebUI
 We will create 3 tiers: Security, Platform and Product.
 ![image](https://user-images.githubusercontent.com/101111449/168101119-4cc0c8a1-402f-48bc-b593-c0202df0f2c2.png)
 
-### Adding policies
+### Zone-Based Architecture
 
+Using the label schema in the application Storefront we will be able to create policies for our microsegmentation project:
 
+Create the DMZ Policy:
+```
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.dmz
+```
+Create the Trusted Policy:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/trusted.yaml
+``` 
+Create the Restricted Policy:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/restricted.yaml
+```
