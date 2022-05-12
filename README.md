@@ -73,5 +73,5 @@ kubectl get deployments -l k8s-app=kube-dns -n kube-system
 ```    
 Allow traffic for Kube-DNS / CoreDNS:
 ```
-kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/allow-kubedns.yaml
+kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/platform.allowkubedns
 ```
