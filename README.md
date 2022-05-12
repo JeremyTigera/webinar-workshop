@@ -20,3 +20,20 @@ kubectl apply -f https://installer.calicocloud.io/storefront-demo.yaml
 
 You will notice that this application has been developped to use a Frontend, Backend, Logging and 2 Microservices and they have been designed to use the full potential of Calico Entreprise's Network Policies. With that label schema, we can deploy Storefront application in a zone based architecture to enforce Microsegmentation and Zero-Trust.
 
+![image](https://user-images.githubusercontent.com/101111449/168094979-fa4da469-19c7-4988-bc56-aabb5c1c6775.png)
+
+With our Service Graph tool we can create a realtime topoly of this application and see clearly the communications between microservices.
+On top of that we can see if some flows are blocked or allowed and let you know which policy is responsible.
+
+## Implementing your security
+
+First of all, with Calico Entreprise and Cloud we have an added feature for the Network Policies called Tiers.
+You can create a zone based architecture to help creating scopes for your teams. They will be in charge of one or multiple zones, here below the documentation and a screenshot to visualise it better:
+![image](https://user-images.githubusercontent.com/101111449/168097675-0400a123-e0a1-4eef-9f51-0b37679eee65.png)
+
+https://docs.tigera.io/v3.13/security/tiered-policy#tiers-what-and-why
+
+### Create Tiers
+
+You can create a tier via yaml manifest or simply via the WebUI
+
