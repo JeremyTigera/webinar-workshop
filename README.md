@@ -36,4 +36,9 @@ https://docs.tigera.io/v3.13/security/tiered-policy#tiers-what-and-why
 ### Create Tiers
 
 You can create a tier via yaml manifest or simply via the WebUI
+We will create 3 tiers: Security, Platform and Product.
+![image](https://user-images.githubusercontent.com/101111449/168101119-4cc0c8a1-402f-48bc-b593-c0202df0f2c2.png)
+
+### Adding policies
+
 
