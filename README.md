@@ -208,7 +208,7 @@ kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-pa
 Documentation for creating GlobalAlert custom resources:
 https://docs.calicocloud.io/reference/resources/globalalert
 
-
+### Alerts
 #### Alert on NetworkSet changes:
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/alerting/networksets.yaml
@@ -224,3 +224,69 @@ kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-pa
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/
 ```
 ![image](https://user-images.githubusercontent.com/101111449/200922829-8b544df8-2751-4e96-9503-c282632743af.png)
+
+### Reports
+
+#### Generate a ``` CIS Benchmark```  report: <br/>
+https://docs.calicocloud.io/compliance/overview
+```   
+kubectl apply -f https://raw.githubusercontent.com/n1g3ld0uglas/EuroAKSWorkshopCC/main/cis.yaml
+```
+
+#### Generate an ```Inventory```  report
+```  
+kubectl apply -f https://raw.githubusercontent.com/n1g3ld0uglas/EuroAKSWorkshopCC/main/inventory.yaml
+```
+
+#### Generate a ```Network Access```  report:
+``` 
+kubectl apply -f https://raw.githubusercontent.com/n1g3ld0uglas/EuroAKSWorkshopCC/main/network.yaml 
+```
+<br/>
+https://docs.calicocloud.io/compliance/overview
+
+![compliance-reporting](https://user-images.githubusercontent.com/82048393/144321272-d6303cde-18b3-434a-b2ff-d45c6d9ccece.png)
+
+
+Confirm your three reports are running as expected:
+```
+kubectl get globalreports
+```
+
+Ensure that the compliance-benchmarker is running, and that the cis-benchmark report type is installed:
+```
+kubectl get -n tigera-compliance daemonset compliance-benchmarker
+kubectl get globalreporttype cis-benchmark
+```
+
+
+In the following example, we use a GlobalReport with CIS benchmark fields to schedule a ```DAILY``` report <br/>
+https://docs.calicocloud.io/compliance/compliance-reports-cis
+```
+apiVersion: projectcalico.org/v3
+kind: GlobalReport
+metadata:
+  name: daily-cis-results
+  labels:
+    deployment: production
+spec:
+  reportType: cis-benchmark
+  schedule: 0 0 * * *
+  cis:
+    highThreshold: 100
+    medThreshold: 50
+    includeUnscoredTests: true
+    numFailedTests: 5
+    resultsFilters:
+    - benchmarkSelection: { kubernetesVersion: "1.13" }
+      exclude: ["1.1.4", "1.2.5"]
+```
+
+<img width="1458" alt="Screenshot 2022-05-05 at 14 42 11" src="https://user-images.githubusercontent.com/82048393/166936183-96695c59-8172-4597-a92e-bd424a748696.png">
+
+
+The report is scheduled to run at midnight of the next day (in UTC), and the benchmark items ```1.1.4```  and  ```1.2.5``` will be omitted from the results.
+<br/>
+<br/>
+Set it to ```schedule: 0 * * * *```  if you wish to generate ```HOURLY``` reports.
+
