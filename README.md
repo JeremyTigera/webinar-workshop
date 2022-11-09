@@ -1,4 +1,5 @@
-# Webinar/Workshop - Calico Entreprise/Calico Cloud
+# Tigera Calico Cloud - Security Workshop
+## Implementing Container Security
 
 This repository was created for the webinar about Calico Entreprise.
 For this event, we will use two GKE Clusters, one to introduce Calico Entreprise and a second one to deploy policies, alerts, audits etc.
