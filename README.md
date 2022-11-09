@@ -223,3 +223,4 @@ kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-pa
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/
 ```
+![image](https://user-images.githubusercontent.com/101111449/200922829-8b544df8-2751-4e96-9503-c282632743af.png)
