@@ -300,3 +300,7 @@ https://docs.calicocloud.io/image-assurance/scan-image-registries
 
 <img width="1781" alt="Screenshot 2022-05-05 at 14 30 21" src="https://user-images.githubusercontent.com/82048393/166934933-bb61e30b-8e89-49a4-8f8e-6e51eb48aacd.png">
 
+## Many more features and use case scenarios in the Tigera Official Github Repo in the following link
+https://github.com/tigera-solutions/calicocloud-aks-workshop
+
+#Thanks
