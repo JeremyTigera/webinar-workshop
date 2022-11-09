@@ -63,7 +63,7 @@ Confirm all policies are running:
 kubectl get networkpolicies.p -n storefront -l projectcalico.org/tier=product
 ```
 
-### Platform Tier
+#### Platform Tier
 
 Allow Kube-DNS Traffic: 
 We need to create the following policy within the ```tigera-security``` tier <br/>
@@ -80,7 +80,7 @@ Kubernetes best practise: Default Deny
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.default-deny-storefront
 ```
 
-### Security Tier
+#### Security Tier
 
 We will create a quarantine policy in the security tier, which is higher than the product and platform.
 Meaning it has a higher priority.
@@ -118,7 +118,7 @@ kubectl label pods attacker-pod quarantine=true
 ```
 
 
-### Introduce Threat Feeds
+## Introduce Threat Feeds
 
 Create the FeodoTracker globalThreatFeed:
 ```
