@@ -7,19 +7,20 @@ For this event, we will use a Kubernetes cluster and we will deploy two cloud na
 ## Preparing the Cluster
 
 Create a cluster in any supported platform such as AKS, EKS, GKE, RKE, Open Shift, Tanzu and so on.
-When the cluster is ready, the easiest and fastest way to manage your policies is to connect this cluster to Calico Cloud as you can create your own trial account here and will have 14 days free:
+When the cluster is up and run, we will connect it to Calico Cloud by running a simple command.
+To create your own 14-day trial account, click on the link below:
 https://www.calicocloud.io/home
 
-There is no real difference between Calico Cloud and Entreprise, one is a SaaS and the second one is On-Premise.
-If you have to install Calico Enterprise, you will have to contact a Sales Representative to get a license key.
+We also offer an On-Premises version of Calico Cloud called Calico Enterprise.
+Both versions are similar.
 
-Now the cluster is installed with Calico Enterprise, we will need to deploy an application.
+Now the cluster is connected to Calico Cloud, we will start by deploying a simple cloud native application.
 ```
 kubectl apply -f https://installer.calicocloud.io/storefront-demo.yaml
 ```
 ![image](https://user-images.githubusercontent.com/101111449/168093686-bf8634b2-3b3d-41dd-bec2-fc0ae8bdf196.png)
 
-You will notice that this application has been developped to use a Frontend, Backend, Logging and 2 Microservices and they have been designed to use the full potential of Calico Entreprise's Network Policies. With that label schema, we can deploy Storefront application in a zone based architecture to enforce Microsegmentation and Zero-Trust.
+You will notice that this application has been developped to use a Frontend, Backend, Logging and 2 Microservices and they have been designed to use the full potential of Calico Cloud's Network Policies. With that label schema, we can deploy Storefront application in a zone based architecture to enforce Microsegmentation and Zero-Trust.
 
 ![image](https://user-images.githubusercontent.com/101111449/168094979-fa4da469-19c7-4988-bc56-aabb5c1c6775.png)
 
