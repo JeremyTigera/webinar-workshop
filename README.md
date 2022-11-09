@@ -120,7 +120,8 @@ kubectl label pods attacker-pod quarantine=true
 ```
 
 
-## Introduce Threat Feeds
+## Introduction to Threat Feeds
+### Global Thread Feeds
 
 Create the FeodoTracker globalThreatFeed:
 ```
@@ -140,4 +141,32 @@ kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-pa
 Create a Default-Deny in the 'Default' namespace:
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/default-deny.yaml
+```
+
+### Anonymization Attacks
+Create the threat feed for KNOWN-MALWARE which we can then block with network policy:
+```
+kubectl apply -f https://raw.githubusercontent.com/n1g3ld0uglas/EuroEKSClusterCC/main/malware-ipfeed.yaml
+```
+Create the threat feed for Tor Bulk Exit Nodes:
+```
+kubectl apply -f https://docs.tigera.io/manifests/threatdef/tor-exit-feed.yaml
+```
+Additionally, feeds can be checked using following command:
+
+```kubectl get globalthreatfeeds
+```
+As you can see from the below example, it's making a pull request from a dynamic feed and labelling it - so we have a static selector for the feed:
+```
+apiVersion: projectcalico.org/v3
+kind: GlobalThreatFeed
+metadata:
+  name: vpn-ejr
+spec:
+  pull:
+    http:
+      url: https://raw.githubusercontent.com/n1g3ld0uglas/EuroEKSClusterCC/main/ejrfeed.txt
+  globalNetworkSet:
+    labels:
+      threatfeed: vpn-ejr
 ```
