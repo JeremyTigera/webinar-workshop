@@ -290,3 +290,13 @@ The report is scheduled to run at midnight of the next day (in UTC), and the ben
 <br/>
 Set it to ```schedule: 0 * * * *```  if you wish to generate ```HOURLY``` reports.
 
+## Scan image registries for known vulnerabilities
+Image Assurances helps operators identify vulnerabilities in workloads they deploy to Kubernetes clusters. <br/>
+A vulnerability is a weakness in an application (for example, a design flaw or an implementation bug) that allows attackers to cause additional harm.<br/>
+<br/>
+The Common Vulnerabilities and Exposures (CVE) system provides publicly known information and security vulnerabilities and exposures. <br/>
+Known vulnerabilities are identified by a unique CVE ID, based on the year it was reported (for example, CVE-2021-44228). <br/>
+https://docs.calicocloud.io/image-assurance/scan-image-registries
+
+<img width="1781" alt="Screenshot 2022-05-05 at 14 30 21" src="https://user-images.githubusercontent.com/82048393/166934933-bb61e30b-8e89-49a4-8f8e-6e51eb48aacd.png">
+
