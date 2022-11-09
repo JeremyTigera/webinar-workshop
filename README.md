@@ -176,10 +176,12 @@ spec:
 ```
 kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/release/kubernetes-manifests.yaml
 ```
-We also offer a test application for Kubernetes-specific network policies:
+We also offer a test application for Kubernetes-specific network policies, the commands can be found in the more in depth repository below:
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/workloads/test.yaml
 ```
+https://github.com/tigera-solutions/calicocloud-aks-workshop/blob/main/modules/pod-access-controls.md
+
 #### Block the test application
 Deny the frontend pod traffic:
 ```
