@@ -228,7 +228,7 @@ kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-pa
 ### Reports
 
 #### Generate a ``` CIS Benchmark```  report: <br/>
-https://docs.calicocloud.io/compliance/overview
+
 ```   
 kubectl apply -f https://raw.githubusercontent.com/n1g3ld0uglas/EuroAKSWorkshopCC/main/cis.yaml
 ```
