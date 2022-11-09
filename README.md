@@ -180,7 +180,7 @@ We also offer a test application for Kubernetes-specific network policies:
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/workloads/test.yaml
 ```
-### Block the test application
+#### Block the test application
 Deny the frontend pod traffic:
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/frontend-deny.yaml
@@ -189,7 +189,7 @@ Allow the frontend pod traffic:
 ```
 kubectl delete -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/frontend-deny.yaml
 ```
-### Introduce segmented policies
+#### Introduce segmented policies
 Deploy policies for the Boutique application:
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/boutique-policies.yaml
