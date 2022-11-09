@@ -154,7 +154,8 @@ kubectl apply -f https://docs.tigera.io/manifests/threatdef/tor-exit-feed.yaml
 ```
 Additionally, feeds can be checked using following command:
 
-```kubectl get globalthreatfeeds
+```
+kubectl get globalthreatfeeds
 ```
 As you can see from the below example, it's making a pull request from a dynamic feed and labelling it - so we have a static selector for the feed:
 ```
