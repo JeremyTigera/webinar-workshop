@@ -118,4 +118,24 @@ kubectl label pods attacker-pod quarantine=true
 ```
 
 
+### Introduce Threat Feeds
 
+Create the FeodoTracker globalThreatFeed:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/threatfeed/feodo-tracker.yaml
+```
+
+Verify the GlobalNetworkSet is configured correctly:
+```
+kubectl get globalnetworksets threatfeed.feodo-tracker -o yaml
+```
+
+Applies to anything that IS NOT listed with the namespace selector = 'acme'
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/threatfeed/block-feodo.yaml
+```
+
+Create a Default-Deny in the 'Default' namespace:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/default-deny.yaml
+```
