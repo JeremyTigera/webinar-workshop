@@ -198,4 +198,4 @@ Deploy policies for the K8 test application:
 ```
 kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/test-app.yaml
 ```
-Screenshot 2022-05-05 at 14 45 04
+![image](https://user-images.githubusercontent.com/101111449/200919633-a72aaf31-1fba-414e-8959-c0255bbba6d6.png)
