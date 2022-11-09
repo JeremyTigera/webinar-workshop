@@ -1,7 +1,7 @@
 # Tigera Calico Cloud - Security Workshop
 ## Implementing Container Security
 
-This repository was created for the webinar about container security for Calico Cloud.
+This repository was created for the webinar about container security with Calico Cloud.
 For this event, we will use a Kubernetes cluster and we will deploy two cloud native applications, some policies, alerts, reports and talk about features.
 
 ## Preparing the Cluster
