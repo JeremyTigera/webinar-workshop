@@ -171,3 +171,31 @@ spec:
     labels:
       threatfeed: vpn-ejr
 ```
+
+## Deploy the Boutique Store Application
+```
+kubectl apply -f https://raw.githubusercontent.com/GoogleCloudPlatform/microservices-demo/master/release/kubernetes-manifests.yaml
+```
+We also offer a test application for Kubernetes-specific network policies:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/workloads/test.yaml
+```
+Block the test application
+Deny the frontend pod traffic:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/frontend-deny.yaml
+```
+Allow the frontend pod traffic:
+```
+kubectl delete -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/frontend-deny.yaml
+```
+Introduce segmented policies
+Deploy policies for the Boutique application:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/boutique-policies.yaml
+```
+Deploy policies for the K8 test application:
+```
+kubectl apply -f https://raw.githubusercontent.com/tigera-solutions/aws-howdy-parter-calico-cloud/main/policies/test-app.yaml
+```
+Screenshot 2022-05-05 at 14 45 04
