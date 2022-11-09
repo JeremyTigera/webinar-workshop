@@ -1,8 +1,8 @@
 # Tigera Calico Cloud - Security Workshop
 ## Implementing Container Security
 
-This repository was created for the webinar about Calico Entreprise.
-For this event, we will use two GKE Clusters, one to introduce Calico Entreprise and a second one to deploy policies, alerts, audits etc.
+This repository was created for the webinar about container security for Calico Cloud.
+For this event, we will use a Kubernetes cluster and we will deploy two cloud native applications, some policies, alerts, reports and talk about features.
 
 ## Preparing the Cluster
 
