@@ -1,9 +1,9 @@
 apiVersion: projectcalico.org/v3
 kind: GlobalNetworkPolicy
 metadata:
-  name: security.quarantine
+  name: tigera-security.quarantine
 spec:
-  tier: security
+  tier: tigera-security
   order: 100
   selector: quarantine == "true"
   namespaceSelector: ''
