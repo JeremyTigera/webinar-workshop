@@ -1,7 +1,7 @@
 apiVersion: projectcalico.org/v3
 kind: GlobalNetworkPolicy
 metadata:
-  name: security.quarantinee
+  name: security.quarantine
 spec:
   tier: security
   order: 100
