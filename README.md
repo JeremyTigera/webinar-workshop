@@ -49,16 +49,10 @@ We will create 3 tiers: Security, Platform and Product.
 
 Using the label schema in the application Storefront we will be able to create policies for our microsegmentation project:
 
-Create the DMZ Policy:
+Create the policies DMZ, Trusted, Restricted:
 ```
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.dmz
-```
-Create the Trusted Policy:
-```
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.trusted
-``` 
-Create the Restricted Policy:
-```
 kubectl apply -f https://raw.githubusercontent.com/JeremyTigera/webinar-workshop/main/product.restricted
 ```
 
