@@ -1,5 +1,5 @@
 apiVersion: projectcalico.org/v3
-kind: NetworkPolicy
+kind: StagedNetworkPolicy
 metadata:
   name: product.default-deny-storefront
   namespace: storefront
