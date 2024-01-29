@@ -1,0 +1,20 @@
+apiVersion: projectcalico.org/v3
+kind: StagedGlobalNetworkPolicy
+metadata:
+  name: security.block-feodo
+spec:
+  tier: tigera-security
+  order: 210
+  selector: projectcalico.org/namespace != "acme"
+  namespaceSelector: ''
+  serviceAccountSelector: ''
+  egress:
+    - action: Deny
+      source: {}
+      destination:
+        selector: threatfeed == "feodo"
+  doNotTrack: false
+  applyOnForward: false
+  preDNAT: false
+  types:
+    - Egress
