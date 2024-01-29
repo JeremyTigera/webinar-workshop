@@ -1,9 +1,9 @@
 apiVersion: projectcalico.org/v3
 kind: StagedGlobalNetworkPolicy
 metadata:
-  name: security.block-feodo
+  name: tigera-security.block-feodo
 spec:
-  tier: tigera-security
+  tier: security
   order: 210
   selector: projectcalico.org/namespace != "acme"
   namespaceSelector: ''
