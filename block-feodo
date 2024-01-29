@@ -1,7 +1,7 @@
 apiVersion: projectcalico.org/v3
 kind: StagedGlobalNetworkPolicy
 metadata:
-  name: tigera-security.block-feodo
+  name: security.block-feodo
 spec:
   tier: security
   order: 210
